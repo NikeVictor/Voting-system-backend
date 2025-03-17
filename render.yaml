@@ -1,0 +1,14 @@
+# Exported from Render on 2024-07-11T12:08:50Z
+services:
+  - type: web
+    name: Voting-System-Backend
+    runtime: node
+    repo: https://github.com/NikeVictor/Voting-system-backend.git
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+    region: oregon
+    buildCommand: npm install && npm run build
+    startCommand: npx serve dist
+version: '1'
