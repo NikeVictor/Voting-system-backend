@@ -3,7 +3,7 @@ services:
   - type: web
     name: Voting-System-Backend
     runtime: node
-    repo: https://github.com/NikeVictor/Voting-system-backend.git
+    repo: https://github.com/NikeVictor/Voting-system-backend
     plan: free
     envVars:
       - key: DATABASE_URL

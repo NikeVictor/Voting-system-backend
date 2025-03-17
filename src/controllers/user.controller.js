@@ -5,8 +5,8 @@ module.exports = {
         try {
           const phoneNumber = req.body.phoneNumber;
             const existingUser = await User.findOne({ phoneNumber });
-            if (!existingUser) {
-                return res.status(404).json({ message: "User not found" });
+            if (existingUser) {
+                return res.status(404).json({ message: "User already accredited" });
             }
             const user = new User ({
                 name: req.body.name,
