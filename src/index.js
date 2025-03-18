@@ -3,6 +3,7 @@ const cors = require("cors");
 const connectDB = require("./db");
 require("dotenv").config();
 const logger = require("morgan");
+const cron = require("node-cron");
 
 const routes = require("./routes/voting.route");
 
@@ -19,5 +20,9 @@ const start = async () => {
   await connectDB(process.env.DB_URL);
   console.log("DB connected")
   app.listen(PORT, console.log("server is listening to port " + PORT));
+
+  cron.schedule("*/1 * * * *", async () => {
+    console.log("Scheduled task running at:", new Date().toLocaleString());
+  });
 };
 start();
