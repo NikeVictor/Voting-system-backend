@@ -21,7 +21,7 @@ const start = async () => {
   console.log("DB connected")
   app.listen(PORT, console.log("server is listening to port " + PORT));
 
-  cron.schedule("*/1 * * * *", async () => {
+  cron.schedule("*/5 * * * *", async () => {
     console.log("Scheduled task running at:", new Date().toLocaleString());
   });
 };
